@@ -31,7 +31,7 @@ while ($repeat -eq "Y"){
 	buildPath -Path .\revision -PathName .\revision\$ModuleCode -Name $ModuleCode
 	buildPath -Path .\revision\$ModuleCode -PathName .\revision\$ModuleCode\past-papers -Name "past-papers"
 	for($j=1 ; $j -le 2; $j++){
-		for($i=15 ; $i -le 18; $i++){
+		for($i=14 ; $i -le 18; $i++){
 			$PaperName = $ModuleCode +"-"+ $i +".pdf"
 			$PaperPath = ".\revision\${ModuleCode}\past-papers\${ModuleCode}-${j}-${i}.pdf"
 			Invoke-WebRequest -uri "https://www.aber.ac.uk/en/media/departmental/examinations/pastpapers/pdf/compsci/sem${j}-${i}/${ModuleCode}-${i}.pdf" -Headers $headers -OutFile $PaperPath
